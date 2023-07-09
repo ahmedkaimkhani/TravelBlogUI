@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:travel_blog_flutter/Model/travel.dart';
 import 'package:travel_blog_flutter/detail.dart';
 import 'package:travel_blog_flutter/widget/most_popular.dart';
+import 'package:travel_blog_flutter/widget/travel_blog.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+ HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,9 @@ class HomePage extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) {
-            return DetailPage();
+            return DetailPage(
+              travel: Travel(),
+              );
           },
           ),
           );
